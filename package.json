@@ -4,7 +4,8 @@
   "description": "A utilty to manage your monthly expenses and visualise them",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Cherub",
   "license": "ISC",
@@ -21,5 +22,4 @@
   "engines": {
     "node": "10.15.3"
   },
-  "start" : "node app.js",
 }
