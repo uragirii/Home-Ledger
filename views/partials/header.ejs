@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Ledger</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg justify-content-between py-0 navbar-dark bg-dark" id="mainNavbar">
+            <div class="container">
+        <a href="/" class="navbar-brand">
+            Home Ledger
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navExtras" aria-controls="navaExtras" aria-expanded="False" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navExtras">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a href="/" class="nav-link text-danger">Home</a></li>
+                <li class="nav-item pl-4"><a href="/house" class="nav-link text-light">Houses</a></li>
+
+            </ul>
+                <% if(!currentUser){ %>
+                    <a class="btn btn-outline-none my-2 mycarousel-sm-0 text-light" href = "/login"><i class="far fa-user"></i> Login</a>
+                <% } else{ %>
+                    <a class="btn btn-outline-none my-2 px-2 mycarousel-sm-0 text-light text-capitalize" href = "javascript:void(0);"><i class="far fa-user"></i> <%= currentUser.username %></a>
+                    <a class="btn btn-outline-none my-2 px-2 mycarousel-sm-0 text-light text-capitalize" href="/logout" class="nav-link text-light">Logout</a>
+                <% } %>
+                
+            </div>
+        </div>
+</div>
+
+    </nav>

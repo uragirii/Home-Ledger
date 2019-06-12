@@ -1,0 +1,88 @@
+<% include ./partials/header %>
+    <div class="modal fade" id="newGroupModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="newGroupLabel">Create New Group</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form action="" method="">
+                <div class="form-group">
+                <label for="group-name" class="col-form-label">Group Name:</label>
+                <input type="text" class="form-control" name="grpName" id="grpName" placeholder="Group Name">
+                </div>
+                <hr>
+                <div class="form-group">
+                <label for="subgrpName" class="col-form-label">Sub group Name:</label>
+                <input type="text" id="subgrpName" class="form-control" name="subgrpName" placeholder="Sub Group Name">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="createGrpSubmit">Create Group</button>
+            </div></form>
+        </div>
+        </div>
+    </div>
+    <div class="container pt-3">
+        <div class="row py-3">
+            <div class="col-12">
+                <h4>Add New Entry</h4>
+            </div>
+        </div>
+            <div class="container row">
+                <form action="/<%=houseId%>/ledger/new" method="post" class="col">
+                    <div class="form-group row">
+                        <label for="date" class="col-sm-2 col-form-label">Date :</label>
+                        <div class="col-sm-4"><input type="date" class="form-control" id="date" name="date" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="value" class="col-sm-2 col-form-label">Value : (INR)</label>
+                        <div class="col-sm-4"><input type="number" name="value" id="value" class="form-control" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="payment" class="col-sm-2 col-form-label">Payment Method:</label>
+                        <div class="col-sm-4">
+                            <select name="payment" id="payment" class="custom-select" required>
+                                <option value="" selected>Please Select</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Cheque">Cheque</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="group" class="col-sm-2 col-form-label">Group :</label>
+                        <div class="col-sm-4">
+                            <select name="group" id="group" class="custom-select" required>
+                                <option value="" selected>Please Select</option>
+                                <option value="Group 2">Group 2</option>
+                                <option value="newgroup">Create a new group</option>
+                            </select>
+                        </div>
+                        <label for="subgroup" class="col-sm-2 col-form-label">Sub Group:</label>
+                        <div class="col-sm-4">
+                            <select name="subGrp" id="subGrp" class="custom-select" disabled>
+                                <option value="" selected>Select group first</option>
+                                <option value="Group 2">Group 2</option>
+                                <option value="newgroup">Create a new subgroup</option>
+                            </select>
+                        </div>
+                    </div
+                    <div class="form-group row">
+                        <label for="notes" class="col-sm-2 col-form-label">Notes</label>
+                        <div class="col-sm-4">
+                        <textarea name="notes" id="notes" cols="45" rows="3" placeholder="Enter notes for payment"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row ">
+                        <button class="btn btn-sm btn-outline-success" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ./partials/footer %>
