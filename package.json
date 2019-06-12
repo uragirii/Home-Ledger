@@ -20,5 +20,6 @@
   },
   "engines": {
     "node": "10.15.3"
-  }
+  },
+  "start" : "node app.js",
 }
